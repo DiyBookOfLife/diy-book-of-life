@@ -1,0 +1,615 @@
+:root {
+  --black: #0b0b0d;
+  --charcoal: #17181a;
+  --teal: #0f4f4e;
+  --gold: #c8a15a;
+  --terracotta: #b5522e;
+  --fog: #d5d9da;
+  --cream: #f7f4ef;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--black);
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  min-height: 92px;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 11, 13, 0.99),
+      rgba(10, 18, 19, 0.99)
+    );
+  border-bottom: 1px solid rgba(200, 161, 90, 0.35);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -11px;
+  width: 70px;
+  position: relative;
+  color: var(--gold);
+  text-shadow:
+    -8px 0 0 var(--teal),
+    7px 0 0 var(--terracotta);
+}
+
+.brand-text h1 {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.brand-text p {
+  margin-top: 3px;
+  color: var(--gold);
+  font-family: "Brush Script MT", cursive;
+  font-size: 18px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.main-nav a {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  transition: 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav .active {
+  color: var(--gold);
+}
+
+.quote-btn {
+  padding: 14px 21px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  background: linear-gradient(135deg, var(--gold), var(--terracotta));
+  color: #111;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(181, 82, 46, 0.22);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+  min-height: 720px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 78% 38%,
+      rgba(181, 82, 46, 0.22),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 72% 35%,
+      rgba(200, 161, 90, 0.16),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 88% 42%,
+      rgba(15, 79, 78, 0.22),
+      transparent 30%
+    ),
+    linear-gradient(
+      110deg,
+      #070809 0%,
+      #111315 48%,
+      #0c1112 100%
+    );
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 8, 9, 0.96) 0%,
+    rgba(7, 8, 9, 0.82) 38%,
+    rgba(7, 8, 9, 0.35) 70%,
+    rgba(7, 8, 9, 0.1) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1500px, 94%);
+  min-height: 720px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  align-items: center;
+  gap: 25px;
+}
+
+.hero-copy {
+  padding: 72px 0 45px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.hero h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(54px, 5.4vw, 78px);
+  line-height: 0.98;
+  font-weight: 500;
+  margin-bottom: 28px;
+  max-width: 660px;
+}
+
+.hero h2 span {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: "Brush Script MT", cursive;
+  color: var(--gold);
+  font-weight: 400;
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+.hero-description {
+  max-width: 580px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: #e5e5e5;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 42px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 155px;
+  padding: 15px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--terracotta));
+  color: #111;
+}
+
+.btn-secondary {
+  border: 1px solid var(--gold);
+  color: var(--white);
+}
+
+/* =========================
+   HERO FEATURE ROW
+========================= */
+
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(130px, 1fr));
+  gap: 22px;
+  max-width: 760px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.feature-item strong {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  line-height: 1.25;
+}
+
+.feature-item small {
+  display: block;
+  color: #cfcfcf;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+  position: relative;
+  height: 590px;
+  margin-right: -55px;
+}
+
+.laptop {
+  position: absolute;
+  width: 78%;
+  max-width: 720px;
+  right: 7%;
+  top: 72px;
+  transform: perspective(1200px) rotateY(-4deg) rotateX(1deg);
+  z-index: 2;
+}
+
+.laptop-screen {
+  min-height: 385px;
+  border: 11px solid #111;
+  border-radius: 18px 18px 6px 6px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 67% 48%,
+      rgba(200, 161, 90, 0.18),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 82% 35%,
+      rgba(15, 79, 78, 0.28),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #060708, #0d1e1f);
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.62),
+    0 0 55px rgba(15, 79, 78, 0.2);
+}
+
+.laptop::after {
+  content: "";
+  position: absolute;
+  height: 24px;
+  left: -9%;
+  right: -9%;
+  bottom: -21px;
+  background: linear-gradient(#9a9a9c, #4d4e50);
+  border-radius: 3px 3px 18px 18px;
+  box-shadow: 0 18px 20px rgba(0, 0, 0, 0.35);
+}
+
+.screen-logo,
+.phone-logo {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  color: var(--gold);
+}
+
+.screen-small {
+  margin-top: 45px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #e1e1e1;
+}
+
+.laptop-screen h3 {
+  margin-top: 4px;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  color: var(--white);
+}
+
+.laptop-screen h4 {
+  margin-top: 4px;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: var(--gold);
+}
+
+.book-art {
+  position: absolute;
+  right: 55px;
+  bottom: 25px;
+  font-size: 120px;
+  color: var(--gold);
+  opacity: 0.6;
+  transform: rotate(180deg);
+}
+
+.phone {
+  position: absolute;
+  width: 158px;
+  height: 330px;
+  right: 0;
+  top: 185px;
+  padding: 9px;
+  border-radius: 30px;
+  background: linear-gradient(#343436, #080809);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.58);
+  z-index: 3;
+}
+
+.phone-screen {
+  height: 100%;
+  border-radius: 22px;
+  padding: 36px 18px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(15, 79, 78, 0.28),
+      transparent 26%
+    ),
+    linear-gradient(180deg, #071011, #091617);
+}
+
+.phone-logo {
+  margin-bottom: 40px;
+}
+
+.phone p,
+.phone strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.phone strong {
+  color: var(--gold);
+}
+
+.circuit-pattern {
+  position: absolute;
+  right: -90px;
+  top: 12px;
+  width: 430px;
+  height: 430px;
+  opacity: 0.7;
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 48%,
+      rgba(15, 79, 78, 0.8) 49%,
+      transparent 51%
+    ),
+    linear-gradient(
+      transparent 48%,
+      rgba(200, 161, 90, 0.75) 49%,
+      transparent 51%
+    );
+  background-size: 46px 46px;
+  mask-image: radial-gradient(circle, black 18%, transparent 70%);
+}
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .main-nav {
+    display: none;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    padding-bottom: 50px;
+  }
+
+  .hero-copy {
+    padding-bottom: 0;
+  }
+
+  .hero-visual {
+    height: 500px;
+    margin-right: 0;
+  }
+
+  .hero-features {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+
+  .laptop {
+    width: 74%;
+    right: 14%;
+  }
+
+  .phone {
+    right: 9%;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .site-header {
+    padding: 14px 5%;
+    min-height: 78px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark {
+    font-size: 34px;
+    width: 58px;
+    letter-spacing: -9px;
+  }
+
+  .brand-text h1 {
+    font-size: 15px;
+  }
+
+  .brand-text p {
+    font-size: 15px;
+  }
+
+  .quote-btn {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    min-height: auto;
+    width: 90%;
+  }
+
+  .hero-copy {
+    padding-top: 55px;
+  }
+
+  .hero h2 {
+    font-size: 52px;
+    line-height: 1;
+  }
+
+  .hero-description {
+    font-size: 17px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 14px;
+  }
+
+  .hero-visual {
+    height: 390px;
+  }
+
+  .laptop {
+    width: 88%;
+    right: 10%;
+    top: 45px;
+  }
+
+  .laptop-screen {
+    min-height: 250px;
+    padding: 28px;
+  }
+
+  .laptop-screen h3 {
+    font-size: 24px;
+  }
+
+  .laptop-screen h4 {
+    font-size: 22px;
+  }
+
+  .screen-small {
+    margin-top: 25px;
+  }
+
+  .book-art {
+    font-size: 80px;
+    right: 30px;
+  }
+
+  .phone {
+    width: 105px;
+    height: 235px;
+    top: 120px;
+    right: 0;
+  }
+
+  .phone-screen {
+    padding: 24px 8px;
+  }
+
+  .phone-logo {
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+
+  .phone p,
+  .phone strong {
+    font-size: 12px;
+  }
+
+  .circuit-pattern {
+    width: 280px;
+    height: 280px;
+    right: -100px;
+  }
+}
